@@ -27,7 +27,7 @@ cert-verifierはPythonのライブラリで、cert-verifier-jsはJavascriptの�
 
   - b- Create a virtualenv folder: virtualenv env
 
-  - c- Activate the virtualenv: source ./venv/Scripts/activate
+  - c- Activate the virtualenv: source ./env/bin/activate
 
   - d- Deactivate the env (when you are done): deactivate
 
@@ -42,7 +42,7 @@ git clone https://github.com/blockchain-certificates/cert-issuer.git && cd cert-
 Go to the line 13, and make it look like this:
 
 ```py
-with open(os.path.join(here, ‘README.md’), encode=’utf-8’) as fp:
+with open(os.path.join(here, ‘README.md’), encoding='utf-8') as fp:
 ```
 
 - 5- Install cert-issuer:
@@ -65,7 +65,7 @@ python setup.py install
 
 - 8- Create a bitcoin testnet wallet:
 
-Visit this website to generate your wallet credentials: Link
+Visit this website to generate your wallet credentials: [Link](https://www.bitaddress.org/bitaddress.org-v3.3.0-SHA256-dec17c07685e1870960903d8f58090475b25af946fe95a734f88408cef4aa194.html?testnet=true)
 
 - 9- Store the private key:
 
@@ -89,6 +89,8 @@ no_safe_mode
 
 - 11- Get some coins:
 
+address]: [mkaKqKBrTat399DiSUD63rmZ6sLVtC6KX7](https://live.blockcypher.com/btc-testnet/address/mkaKqKBrTat399DiSUD63rmZ6sLVtC6KX7/)  
+
 Generate some free testnet bitcoin in your wallet. Visit one of these websites:  
 
 https://bitcoinfaucet.uo1.net/  
@@ -103,7 +105,32 @@ You can track your transactions here: https://www.blockchain.com/explorer
 
 Copy the unsigned certificate examples from ~cert-issuer/examples/data-testnet/unsigned_certificates/  
 
-to this directory ~cert-issuer/data/unsigned_certificates/
+to this directory ~cert-issuer/data/unsigned_certificates/  
+
+**VerifiableCredentialの例**
+
+```json
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://www.w3.org/2018/credentials/examples/v1",
+    "https://w3id.org/blockcerts/v3"
+  ],
+  "id": "urn:uuid:bbba8553-8ec1-445f-82c9-a57251dd731c",
+  "type": [
+    "VerifiableCredential",
+    "BlockcertsCredential"
+  ],
+  "issuer": "did:example:23adb1f712ebc6f1c276eba4dfa",
+  "issuanceDate": "2022-01-01T19:33:24Z",
+  "credentialSubject": {
+    "id": "did:example:ebfeb1f712ebc6f1c276e12ec21",
+    "alumniOf": {
+      "id": "did:example:c276e12ec21ebfeb1f712ebc6f1"
+    }
+  }
+}
+```
 
 - 13- Issue certificates:
 
@@ -125,3 +152,5 @@ python cert_issuer -c conf.ini
 11. [Blockcerts Guide For Absolute Beginners ( 2021)](https://elamlaquighita.medium.com/blockcerts-guide-for-absolute-beginners-2021-1491a087dcc5)
 12. [blockcerts-verifier-js](https://github.com/blockchain-certificates/cert-verifier-js)
 13. [Block Explorer](https://www.blockchain.com/explorer)
+14. [bitaddress](https://www.bitaddress.org/bitaddress.org-v3.3.0-SHA256-dec17c07685e1870960903d8f58090475b25af946fe95a734f88408cef4aa194.html?testnet=true)
+15. [Bitcoin Address Generator](https://blockchain-academy.hs-mittweida.de/bitcoin-address-generator/)
