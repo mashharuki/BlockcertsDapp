@@ -89,25 +89,25 @@ no_safe_mode
 
 - 11- Get some coins:
 
-Generate some free testnet bitcoin in your wallet. Visit one of these websites:
+Generate some free testnet bitcoin in your wallet. Visit one of these websites:  
 
-https://bitcoinfaucet.uo1.net/
-https://kuttler.eu/en/bitcoin/btc/faucet/
-https://tbtc.bitaps.com/
-https://coinfaucet.eu/en/btc-testnet/
-https://testnet.help/en/btcfaucet/testnet
-https://faucet.bitcoincloud.net/
+https://bitcoinfaucet.uo1.net/  
+https://kuttler.eu/en/bitcoin/btc/faucet/  
+https://tbtc.bitaps.com/   
+https://coinfaucet.eu/en/btc-testnet/  
+https://testnet.help/en/btcfaucet/testnet  
+https://faucet.bitcoincloud.net/  
 You can track your transactions here: https://www.blockchain.com/explorer
 
 - 12- Unsigned certificates:
 
-Copy the unsigned certificate examples from ~cert-issuer/examples/data-testnet/unsigned_certificates/
+Copy the unsigned certificate examples from ~cert-issuer/examples/data-testnet/unsigned_certificates/  
 
 to this directory ~cert-issuer/data/unsigned_certificates/
 
 - 13- Issue certificates:
 
-Run the command:
+Run the command:  
 
 python cert_issuer -c conf.ini
 
