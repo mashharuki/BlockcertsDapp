@@ -10,3 +10,4 @@ W3CのVC規格にも対応しているOSSで世界標準となりつつある。
 4. [Introducing Blockcerts](https://www.youtube.com/watch?v=5wAyS1e_hOo)
 5. [blockcerts-verifier](https://github.com/blockchain-certificates/blockcerts-verifier)
 6. [Blockcertsと連動したNFTコントラクト](https://polygonscan.com/address/0xe51496841cd6050a6c17b81b721e60044017ee79#code)
+7. [CIT Credentials v1.0](https://opensea.io/assets/matic/0xe51496841cd6050a6c17b81b721e60044017ee79/121)
