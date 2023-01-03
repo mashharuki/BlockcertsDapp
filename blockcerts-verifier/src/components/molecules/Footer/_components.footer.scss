@@ -1,0 +1,32 @@
+@import '../../../shared-styles/settings.variables';
+@import '../../../shared-styles/objects.text';
+
+.buv-c-footer {
+  width: 100%;
+  height: 60px;
+  background-color: $footerBackground;
+  color: $fontColor;
+  fill: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  box-sizing: border-box;
+
+  a {
+    line-height: 1;
+  }
+}
+
+.buv-c-footer--dark {
+  color: #fff;
+  fill: #fff;
+}
+
+.buv-c-footer--forced {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-top: 0;
+  justify-content: flex-end; // TODO: this is a bit too much consequential: this rule shouldn't know about the layout of its children.
+}

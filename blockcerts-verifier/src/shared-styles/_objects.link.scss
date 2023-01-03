@@ -1,0 +1,11 @@
+@import './settings.variables';
+
+.buv-o-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: currentColor;
+}
+
+.buv-o-link__text--underline {
+  border-bottom: 1px solid;
+}

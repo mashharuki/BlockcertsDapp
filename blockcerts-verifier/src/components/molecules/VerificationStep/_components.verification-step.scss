@@ -1,0 +1,80 @@
+@import '../../../shared-styles/settings.variables';
+@import '../../../shared-styles/objects.text';
+@import '../../../shared-styles/components.badge';
+
+.buv-c-verification-step {
+  position: relative;
+  margin: 15px 0 5px;
+  font-weight: 600;
+}
+
+.buv-c-verification-step.is-first {
+  margin-top: 0;
+}
+
+.buv-c-verification-substep {
+  margin: 0;
+  font-weight: 400;
+  color: rgba(3, 21, 50, .7);
+  padding: 3px 0 0;
+  line-height: 1.71428571;
+}
+
+.buv-c-verification-step.is-success::before,
+.buv-c-verification-step.is-failure::before {
+  left: -38px;
+  top: -4px;
+  width: 24px;
+  height: 24px;
+}
+
+.buv-c-verification-substep::before {
+  left: -28px;
+  top: 10px;
+  width: 4px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, .8);
+}
+
+.buv-c-verification-step::after {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  -webkit-transition: opacity .3s ease-out .2s;
+  -o-transition: opacity .3s ease-out .2s;
+  transition: opacity .3s ease-out .2s;
+  opacity: 0;
+}
+
+.buv-c-verification-step.is-success::after,
+.buv-c-verification-step.is-failure::after {
+  opacity: 1;
+}
+
+.buv-c-verification-step.is-success::after {
+  border: solid $successColor;
+  border-width: 0 2px 2px 0;
+  left: -29px;
+  width: 5px;
+  height: 11px;
+  transform: rotate(45deg);
+}
+
+.buv-c-verification-step.is-success.is-test::after {
+  border-color: $fontColor;
+}
+
+.buv-c-verification-step.is-failure::after {
+  content: '\274C';
+  left: -32px;
+  top: -1px;
+  font-size: 11px;
+  color: $errorColor;
+}
+
+@supports (-ms-ime-align: auto) {
+  // ms edge seems to be considering a different width for the cross character, so fix it the hammer way
+  .buv-c-verification-step.is-failure::after {
+    left: -34px;
+  }
+}

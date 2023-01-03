@@ -155,3 +155,6 @@ python cert_issuer -c conf.ini
 14. [bitaddress](https://www.bitaddress.org/bitaddress.org-v3.3.0-SHA256-dec17c07685e1870960903d8f58090475b25af946fe95a734f88408cef4aa194.html?testnet=true)
 15. [Bitcoin Address Generator](https://blockchain-academy.hs-mittweida.de/bitcoin-address-generator/)
 16. [Blockcert Complete Project Step by Step](https://community.blockcerts.org/t/blockcert-complete-project-step-by-step/83)
+17. [【Zenn】Blockcerts について調べる](https://zenn.dev/tatsuyasusukida/scraps/67bc1139e5410e#comment-6616e80c13f0b4)
+18. [【Zenn】Blockcerts勉強会〜千葉工業大学のNFT学修証明書の裏側〜](https://zenn.dev/sakazuki_xyz/articles/eventreport-blockcerts)
+19. [【Zenn】ブロックチェーンベースの証明書を検証するblockcerts-verifierの紹介](https://zenn.dev/sakazuki_xyz/articles/blockcerts-verifier)

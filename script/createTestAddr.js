@@ -1,3 +1,7 @@
+/**
+ * テストネット用のアドレスを生成するスクリプト
+ */
+
 const bitcore = require('bitcore-lib');
 const network = 'testnet';
 

@@ -1,0 +1,51 @@
+@import '../../../shared-styles/settings.variables';
+
+.buv-c-verification-process {
+  position: relative;
+}
+
+.buv-c-verification-progress-bar {
+  position: absolute;
+  left: 13px;
+  top: 0;
+  width: 14px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.buv-c-verification-progress-bar__tube {
+  min-height: 14px;
+  transition: flex .4s ease-in-out, max-height .4s ease-in;
+  background-color: $successColor;
+  border-radius: 7px;
+  flex-grow: 0;
+  opacity: 0;
+}
+
+.buv-c-verification-progress-bar__tube.has-started {
+  flex-grow: 1;
+  opacity: 1;
+}
+
+.buv-c-verification-progress-bar__tube.is-test {
+  background-color: #d8d8d8;
+}
+
+.buv-c-verification-progress-bar__tube.has-errored {
+  background-color: $errorColor;
+}
+
+.buv-c-verification-progress-bar.no-transition {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.buv-c-verification-process__step-list {
+  padding-left: 46px;
+  margin-top: 0;
+}
+
+@import '../../../shared-styles/utils.a11y';
