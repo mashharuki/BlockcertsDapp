@@ -1,23 +1,37 @@
 # BlockcertsDapp
-Blockcertsを利用したDapp開発用のリポジトリです。  
 
-W3CのVC規格にも対応しているOSSで世界標準となりつつある。
+Blockcerts を利用した Dapp 開発用のリポジトリです。
 
-## Blockcertsとは
-Blockcertsは、参加者が記録を発行し、検証するために開発された標準のセットで、あらゆるブロックチェーンと連動しています。MITメディアラボとLearning Machineでの共同研究がベースになっています。このソフトウェアは、無料かつオープンソースで利用できるようになりました。
+W3C の VC 規格にも対応している OSS で世界標準となりつつある。
 
-## Blockcertsを構成するコンポーネント
+## Blockcerts とは
+
+Blockcerts は、参加者が記録を発行し、検証するために開発された標準のセットで、あらゆるブロックチェーンと連動しています。MIT メディアラボと Learning Machine での共同研究がベースになっています。このソフトウェアは、無料かつオープンソースで利用できるようになりました。
+
+## Blockcerts を構成するコンポーネント
 
 - cert-tools  
-VCのテンプレートの生成に使うコンポーネント
+  VC のテンプレートの生成に使うコンポーネント
 - cert-schema  
-VCのテンプレート作成者が自身のテンプレートを検証するために利用するコンポーネント
+  VC のテンプレート作成者が自身のテンプレートを検証するために利用するコンポーネント
 - cert-issuer  
-証明書自体のハッシュを含む、発行機関から受信者へのトランザクションをBitcoin/Ethereumブロックチェーン上に作成し、ブロックチェーン証明書を発行するPythonライブラリです。
-- cert-verifier 
-cert-verifierはPythonのライブラリで、cert-verifier-jsはJavascriptのライブラリです。どちらもブロックチェーンの証明書を検証するためのものです。
+  証明書自体のハッシュを含む、発行機関から受信者へのトランザクションを Bitcoin/Ethereum ブロックチェーン上に作成し、ブロックチェーン証明書を発行する Python ライブラリです。
+- cert-verifier
+  cert-verifier は Python のライブラリで、cert-verifier-js は Javascript のライブラリです。どちらもブロックチェーンの証明書を検証するためのものです。
 
-## Blockcertsを利用した署名・検証の一例
+## blockcerts-verifier とは
+
+Blockcerts では卒業証明書や学習履歴などの証明書を発行し、表示、検証する仕組みを提供しています。blockcerts-verifier は、証明書の表示・検証をするためのコンポーネントです。Blockcerts の一連の流れの図にある VERIFIER(employer) がユーザーになります。例えば、RECIPIENT(student)の学生を採用する企業の人事担当者がユーザーとして考えられます。
+
+## blockcerts-verifier の動かし方
+
+```bash
+cd blockcerts-verifier
+npm ci
+npm run start
+```
+
+## Blockcerts を利用した署名・検証の一例
 
 - 1- Prerequisites: Python 3.7.9 & pip, Visual Studio tools, GCC compiler.
 
@@ -32,7 +46,8 @@ cert-verifierはPythonのライブラリで、cert-verifier-jsはJavascriptの�
   - d- Deactivate the env (when you are done): deactivate
 
 - 3- Clone the repository:
-- 
+-
+
 ```zsh
 git clone https://github.com/blockchain-certificates/cert-issuer.git && cd cert-issuer
 ```
@@ -89,13 +104,13 @@ no_safe_mode
 
 - 11- Get some coins:
 
-address]: [mkaKqKBrTat399DiSUD63rmZ6sLVtC6KX7](https://live.blockcypher.com/btc-testnet/address/mkaKqKBrTat399DiSUD63rmZ6sLVtC6KX7/)  
+address]: [mkaKqKBrTat399DiSUD63rmZ6sLVtC6KX7](https://live.blockcypher.com/btc-testnet/address/mkaKqKBrTat399DiSUD63rmZ6sLVtC6KX7/)
 
-Generate some free testnet bitcoin in your wallet. Visit one of these websites:  
+Generate some free testnet bitcoin in your wallet. Visit one of these websites:
 
 https://bitcoinfaucet.uo1.net/  
 https://kuttler.eu/en/bitcoin/btc/faucet/  
-https://tbtc.bitaps.com/   
+https://tbtc.bitaps.com/  
 https://coinfaucet.eu/en/btc-testnet/  
 https://testnet.help/en/btcfaucet/testnet  
 https://faucet.bitcoincloud.net/  
@@ -103,11 +118,11 @@ You can track your transactions here: https://www.blockchain.com/explorer
 
 - 12- Unsigned certificates:
 
-Copy the unsigned certificate examples from ~cert-issuer/examples/data-testnet/unsigned_certificates/  
+Copy the unsigned certificate examples from ~cert-issuer/examples/data-testnet/unsigned_certificates/
 
-to this directory ~cert-issuer/data/unsigned_certificates/  
+to this directory ~cert-issuer/data/unsigned_certificates/
 
-**VerifiableCredentialの例**
+**VerifiableCredential の例**
 
 ```json
 {
@@ -117,10 +132,7 @@ to this directory ~cert-issuer/data/unsigned_certificates/
     "https://w3id.org/blockcerts/v3"
   ],
   "id": "urn:uuid:bbba8553-8ec1-445f-82c9-a57251dd731c",
-  "type": [
-    "VerifiableCredential",
-    "BlockcertsCredential"
-  ],
+  "type": ["VerifiableCredential", "BlockcertsCredential"],
   "issuer": "did:example:23adb1f712ebc6f1c276eba4dfa",
   "issuanceDate": "2022-01-01T19:33:24Z",
   "credentialSubject": {
@@ -134,17 +146,18 @@ to this directory ~cert-issuer/data/unsigned_certificates/
 
 - 13- Issue certificates:
 
-Run the command:  
+Run the command:
 
 python cert_issuer -c conf.ini
 
 ### 参考文献
+
 1. [Blockcerts](https://www.blockcerts.org/)
-2. [IPFSにファイルを保存してそれをブラウザに表示＋Blockcerts検証](https://akutsu0521.medium.com/ipfs%E3%81%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%A6%E3%81%9D%E3%82%8C%E3%82%92%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%81%AB%E8%A1%A8%E7%A4%BA-blockcerts%E6%A4%9C%E8%A8%BC-4c5cdc967a83)
+2. [IPFS にファイルを保存してそれをブラウザに表示＋ Blockcerts 検証](https://akutsu0521.medium.com/ipfs%E3%81%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%A6%E3%81%9D%E3%82%8C%E3%82%92%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%81%AB%E8%A1%A8%E7%A4%BA-blockcerts%E6%A4%9C%E8%A8%BC-4c5cdc967a83)
 3. [Blockcerts(GitHub)](https://github.com/blockchain-certificates)
 4. [Introducing Blockcerts](https://www.youtube.com/watch?v=5wAyS1e_hOo)
 5. [blockcerts-verifier](https://github.com/blockchain-certificates/blockcerts-verifier)
-6. [Blockcertsと連動したNFTコントラクト](https://polygonscan.com/address/0xe51496841cd6050a6c17b81b721e60044017ee79#code)
+6. [Blockcerts と連動した NFT コントラクト](https://polygonscan.com/address/0xe51496841cd6050a6c17b81b721e60044017ee79#code)
 7. [CIT Credentials v1.0](https://opensea.io/assets/matic/0xe51496841cd6050a6c17b81b721e60044017ee79/121)
 8. [cert-tools](https://github.com/blockchain-certificates/cert-tools)
 9. [cert-issuer](https://github.com/blockchain-certificates/cert-issuer)
@@ -156,5 +169,6 @@ python cert_issuer -c conf.ini
 15. [Bitcoin Address Generator](https://blockchain-academy.hs-mittweida.de/bitcoin-address-generator/)
 16. [Blockcert Complete Project Step by Step](https://community.blockcerts.org/t/blockcert-complete-project-step-by-step/83)
 17. [【Zenn】Blockcerts について調べる](https://zenn.dev/tatsuyasusukida/scraps/67bc1139e5410e#comment-6616e80c13f0b4)
-18. [【Zenn】Blockcerts勉強会〜千葉工業大学のNFT学修証明書の裏側〜](https://zenn.dev/sakazuki_xyz/articles/eventreport-blockcerts)
-19. [【Zenn】ブロックチェーンベースの証明書を検証するblockcerts-verifierの紹介](https://zenn.dev/sakazuki_xyz/articles/blockcerts-verifier)
+18. [【Zenn】Blockcerts 勉強会〜千葉工業大学の NFT 学修証明書の裏側〜](https://zenn.dev/sakazuki_xyz/articles/eventreport-blockcerts)
+19. [【Zenn】ブロックチェーンベースの証明書を検証する blockcerts-verifier の紹介](https://zenn.dev/sakazuki_xyz/articles/blockcerts-verifier)
+20. [【Zenn】Blockcerts を使って Ethereum ブロックチェーン証明書を発行する方法](https://zenn.dev/tatsuyasusukida/articles/issuing-ethereum-certificates-using-blockcerts)
