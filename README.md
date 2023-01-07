@@ -6,6 +6,14 @@ W3CのVC規格にも対応しているOSSで世界標準となりつつある。
 ## Blockcertsとは
 Blockcertsは、参加者が記録を発行し、検証するために開発された標準のセットで、あらゆるブロックチェーンと連動しています。MITメディアラボとLearning Machineでの共同研究がベースになっています。このソフトウェアは、無料かつオープンソースで利用できるようになりました。
 
+## DIDドキュメントとは
+
+DID ドキュメントは証明書を検証するのに使う公開鍵を実際に格納するドキュメント
+
+### Profile ドキュメント とは
+
+Profile ドキュメント は証明書発行者のプロフィールをまとめたドキュメントで DID ドキュメントの serviceEndpoint から参照されます
+
 ## Blockcertsを構成するコンポーネント
 
 - cert-tools  
@@ -138,6 +146,64 @@ Run the command:
 
 python cert_issuer -c conf.ini
 
+### 秘密鍵からDIDを作成する手順
+
+```bash
+cd blockcerts && node convert.js key_file.txt
+```
+
+result
+
+```bash
+{
+  "kty": "EC",
+  "crv": "K-256",
+  "x": "OHmMFsX67nr0mWHdZLNQMwu4P59RigMgrIwQ5vftVug",
+  "y": "IURb-5IMAAa2LW-KgjwULTP7SnsUBdmbrMY0s6FwpLA"
+}
+```
+
+```bash
+terraform init
+terraform apply
+```
+
+- ブロックチェーン証明書の発行
+
+```bash
+cert-issuer -c conf.ini
+```
+
+result
+
+```bash
+WARNING - Your app is configured to skip the wifi check when the USB is plugged in. Read the documentation to ensure this is what you want, since this is less secure
+INFO - This run will try to issue on the ethereum_goerli chain
+INFO - Set cost constants to recommended_gas_price=20000000000.000000, recommended_gas_limit=25000.000000
+INFO - Processing 1 certificates
+INFO - Processing 1 certificates under work path=/Users/harukikondo/git/BlockcertsDapp/blockcerts/data/work
+INFO - Getting balance with EthereumRPCProvider: 53164948578029855543
+INFO - Total cost will be 500000000000000 wei
+INFO - Starting finalizable signer
+WARNING - app is configured to skip the wifi check when the USB is plugged in. Read the documentation to ensure this is what you want, since this is less secure
+INFO - Stopping finalizable signer
+WARNING - app is configured to skip the wifi check when the USB is plugged in. Read the documentation to ensure this is what you want, since this is less secure
+INFO - here is the op_return_code data: 532bbb70882b4186eeaaf427db152546194ea5463f415d15db5e7d0320a82238
+INFO - Fetching nonce with EthereumRPCProvider
+INFO - Starting finalizable signer
+WARNING - app is configured to skip the wifi check when the USB is plugged in. Read the documentation to ensure this is what you want, since this is less secure
+INFO - Stopping finalizable signer
+WARNING - app is configured to skip the wifi check when the USB is plugged in. Read the documentation to ensure this is what you want, since this is less secure
+INFO - signed Ethereum trx = f88581c28504a817c8008261a894deaddeaddeaddeaddeaddeaddeaddeaddeaddead80a0532bbb70882b4186eeaaf427db152546194ea5463f415d15db5e7d0320a822382da09b29cb988b3a66c1fc0551dbf70aec159cf983d420e40e7d13c4da1e5abb0c92a010992c1f498ce7c2bd5597b9ab07fe3dbe36cea9b3bdf18e2ace35e34e20be2f
+INFO - verifying ethDataField value for transaction
+INFO - verified ethDataField
+INFO - Broadcasting transaction with EthereumRPCProvider
+INFO - Broadcasting succeeded with method_provider=<cert_issuer.blockchain_handlers.ethereum.connectors.EthereumRPCProvider object at 0x7f9985683e50>, txid=0xc329707a022d828af48f4f0823be0e6026551f95f5dad7e5f2a8cba58b757d51
+INFO - merkle_json: {'path': [], 'merkleRoot': '532bbb70882b4186eeaaf427db152546194ea5463f415d15db5e7d0320a82238', 'targetHash': '532bbb70882b4186eeaaf427db152546194ea5463f415d15db5e7d0320a82238', 'anchors': ['blink:eth:goerli:0xc329707a022d828af48f4f0823be0e6026551f95f5dad7e5f2a8cba58b757d51']}
+INFO - Broadcast transaction with txid 0xc329707a022d828af48f4f0823be0e6026551f95f5dad7e5f2a8cba58b757d51
+INFO - Your Blockchain Certificates are in /Users/harukikondo/git/BlockcertsDapp/blockcerts/data/blockchain_certificates
+```
+
 ### 参考文献
 1. [Blockcerts](https://www.blockcerts.org/)
 2. [IPFSにファイルを保存してそれをブラウザに表示＋Blockcerts検証](https://akutsu0521.medium.com/ipfs%E3%81%AB%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%A6%E3%81%9D%E3%82%8C%E3%82%92%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%81%AB%E8%A1%A8%E7%A4%BA-blockcerts%E6%A4%9C%E8%A8%BC-4c5cdc967a83)
@@ -158,3 +224,4 @@ python cert_issuer -c conf.ini
 17. [【Zenn】Blockcerts について調べる](https://zenn.dev/tatsuyasusukida/scraps/67bc1139e5410e#comment-6616e80c13f0b4)
 18. [【Zenn】Blockcerts勉強会〜千葉工業大学のNFT学修証明書の裏側〜](https://zenn.dev/sakazuki_xyz/articles/eventreport-blockcerts)
 19. [【Zenn】ブロックチェーンベースの証明書を検証するblockcerts-verifierの紹介](https://zenn.dev/sakazuki_xyz/articles/blockcerts-verifier)
+20. [【Github】nft-vc](https://github.com/pitpa/nft-vc)
