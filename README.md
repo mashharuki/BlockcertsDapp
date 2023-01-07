@@ -239,12 +239,8 @@ INFO - Your Blockchain Certificates are in /Users/harukikondo/git/BlockcertsDapp
 15. [Bitcoin Address Generator](https://blockchain-academy.hs-mittweida.de/bitcoin-address-generator/)
 16. [Blockcert Complete Project Step by Step](https://community.blockcerts.org/t/blockcert-complete-project-step-by-step/83)
 17. [【Zenn】Blockcerts について調べる](https://zenn.dev/tatsuyasusukida/scraps/67bc1139e5410e#comment-6616e80c13f0b4)
-<<<<<<< HEAD
 18. [【Zenn】Blockcerts勉強会〜千葉工業大学のNFT学修証明書の裏側〜](https://zenn.dev/sakazuki_xyz/articles/eventreport-blockcerts)
 19. [【Zenn】ブロックチェーンベースの証明書を検証するblockcerts-verifierの紹介](https://zenn.dev/sakazuki_xyz/articles/blockcerts-verifier)
 20. [【Github】nft-vc](https://github.com/pitpa/nft-vc)
-=======
-18. [【Zenn】Blockcerts 勉強会〜千葉工業大学の NFT 学修証明書の裏側〜](https://zenn.dev/sakazuki_xyz/articles/eventreport-blockcerts)
-19. [【Zenn】ブロックチェーンベースの証明書を検証する blockcerts-verifier の紹介](https://zenn.dev/sakazuki_xyz/articles/blockcerts-verifier)
-20. [【Zenn】Blockcerts を使って Ethereum ブロックチェーン証明書を発行する方法](https://zenn.dev/tatsuyasusukida/articles/issuing-ethereum-certificates-using-blockcerts)
->>>>>>> 90e017d6522e658a9c39e7b916e9696b8d44ca84
+21. [【Zenn】Blockcerts を使って Ethereum ブロックチェーン証明書を発行する方法](https://zenn.dev/tatsuyasusukida/articles/issuing-ethereum-certificates-using-blockcerts)
+
