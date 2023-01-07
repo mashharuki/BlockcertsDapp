@@ -6,7 +6,7 @@ tmp/*
 
 keys/*
 !keys/.keep
-!keys/wallet-private.dev.key
+./keys/wallet-private.dev.key
 
 output/blockchain_certificates/*
 !output/blockchain_certificates/.keep
