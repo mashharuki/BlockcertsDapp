@@ -216,6 +216,18 @@ INFO - Broadcast transaction with txid 0xc329707a022d828af48f4f0823be0e6026551f9
 INFO - Your Blockchain Certificates are in /Users/harukikondo/git/BlockcertsDapp/blockcerts/data/blockchain_certificates
 ```
 
+### 仮想環境をactiveにするコマンド
+
+```bash
+cd nft-vc && source venv/bin/activate
+```
+
+### cert-issuerコマンドの確認コマンド
+
+```bash
+cert-issuer -h
+```
+
 ### 参考文献
 
 1. [Blockcerts](https://www.blockcerts.org/)
@@ -239,4 +251,3 @@ INFO - Your Blockchain Certificates are in /Users/harukikondo/git/BlockcertsDapp
 19. [【Zenn】ブロックチェーンベースの証明書を検証するblockcerts-verifierの紹介](https://zenn.dev/sakazuki_xyz/articles/blockcerts-verifier)
 20. [【Github】nft-vc](https://github.com/pitpa/nft-vc)
 21. [【Zenn】Blockcerts を使って Ethereum ブロックチェーン証明書を発行する方法](https://zenn.dev/tatsuyasusukida/articles/issuing-ethereum-certificates-using-blockcerts)
-
