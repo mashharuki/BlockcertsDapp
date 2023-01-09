@@ -13,5 +13,6 @@ sh ./rsync.sh
 ## CORS 設定
 
 ```sh
+# like gs://...
 gsutil cors set cors_setting.json $GCS_BUCKET_NAME_DEVELOPMENT
 ```

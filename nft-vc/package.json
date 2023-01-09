@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha.js tests/scripts",
-    "test_contracts": "npx hardhat test --network localhost"
+    "test_contracts": "npx hardhat test --network localhost",
+    "convert:did": "node scripts/convert-did-public-key.js ./keys/wallet-private.dev.key",
+    "generate:vc:image": "node scripts/generate-vc-image.js ./tmp/members.json",
+    "generate:unsignedvc": "node scripts/generate-unsigned-vc.js ./tmp/members.json",
+    "issue:vc": "cert-issuer -c cert-issuer.dev.ini --chain ethereum_goerli --goerli_rpc_url $GOERLI_ALCHEMY_URL"
   },
   "keywords": [],
   "author": "",

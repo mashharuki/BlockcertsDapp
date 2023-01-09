@@ -227,6 +227,11 @@ cd nft-vc && source venv/bin/activate
 ```bash
 cert-issuer -h
 ```
+### VC発行コマンド
+
+```bash
+cd nft-vc && yarn issue:vc
+```
 
 ### 参考文献
 

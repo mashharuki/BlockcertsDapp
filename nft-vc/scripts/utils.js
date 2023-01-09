@@ -24,7 +24,7 @@ const {
 // Constants or like constants
 // =============================================================
 
-const ISSUANCE_DATE = new Date("2022-09-29T00:00:00Z")
+const ISSUANCE_DATE = new Date("2023-01-09T23:00:00Z")
 
 // max batch size when bulk mint and transfer
 const MAX_BATCH_SIZE = 5
@@ -104,19 +104,19 @@ const getTokenSymbolFromEnv = () => {
 }
 
 const getTokenName = () => {
-  return "XXX Credentials v1.0"
+  return "Mashharuki Credentials v1.0"
 }
 
 const getTokenSymbol = () => {
-  return "XXX Credentials"
+  return "Mashharuki Credentials"
 }
 
 const getTokenDescription = () => {
-  return "XXX Credentials is a platform for NFT delivery of certificates of completion and diplomas for special courses offered by XXXXX XXXXXXXXX of XXXXXXXXXX. It is distributed to those who have passed the course or graduated from the undergraduate or graduate program."
+  return "Mashharuki Credentials is a platform for NFT delivery of certificates of completion and diplomas for special courses offered by UNCHAIN. It is distributed to those who have passed the course or graduated from the undergraduate or graduate program."
 }
 
 const getTokenJapaneseDescription = () => {
-  return "XXX Credentialsは、XXXXXXの開講する特別な講座、コースに対する受講修了証明書、卒業の証となる学位記などをNFTで配信するプラットフォームです。講座の合格者や本学の学部卒業生・大学院修了生に対して配信されます。"
+  return "Mashharuki Credentialsは、UNCHAINの開講する特別な講座、コースに対する受講修了証明書、卒業の証となる学位記などをNFTで配信するプラットフォームです。講座の合格者や本学の学部卒業生・大学院修了生に対して配信されます。"
 }
 
 const getOpenSeaDescription = () => {
