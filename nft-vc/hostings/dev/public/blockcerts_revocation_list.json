@@ -2,7 +2,7 @@
     "@context": "https://w3id.org/openbadges/v2",
     "id": "https://storage.cloud.google.com/test-nft-vc/blockcerts_revocation_list.json",
     "type": "RevocationList",
-    "issuer": "https://unchain.tech/blockcerts.json",
+    "issuer": "storage.cloud.google.com/test-nft-vc/profile.json",
     "revokedAssertions": []
 }
   

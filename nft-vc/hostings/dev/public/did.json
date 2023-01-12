@@ -1,17 +1,17 @@
 {
     "@context": ["https://www.w3.org/ns/did/v1"],
-    "id": "did:web:mashharuki.com",
+    "id": "did:web:storage.cloud.google.com/test-nft-vc",
     "service": [
       {
         "id": "#issuer-profile",
         "type": "IssuerProfile",
-        "serviceEndpoint": "https://unchain.tech/"
+        "serviceEndpoint": "https://storage.cloud.google.com/test-nft-vc/profile.json"
       }
     ],
     "verificationMethod": [
       {
         "id": "#key-1",
-        "controller": "did:web:mashharuki.com",
+        "controller": "did:web:storage.cloud.google.com/test-nft-vc",
         "type": "EcdsaSecp256k1VerificationKey2019",
         "publicKeyJwk": {
             "kty":"EC",
