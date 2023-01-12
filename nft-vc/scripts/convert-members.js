@@ -20,6 +20,7 @@ const fieldNameMap = {
 }
 
 const ETHEREUM_WALLET_ADDRESS_RE = /^0x[a-fA-F0-9]{40}$/
+
 function isEthereumAddress(address) {
   return !!address.match(ETHEREUM_WALLET_ADDRESS_RE)
 }
@@ -32,7 +33,10 @@ async function main() {
   const inputCsv = process.argv[2]
   const rawItems = await csv().fromFile(inputCsv)
 
-  const items = []
+  console.log("process.argv[2]:", process.argv[2]);
+
+  const items = [];
+
   rawItems.forEach((rawItem) => {
     const item = { id: uuidv4() }
     Object.keys(fieldNameMap).forEach((rawField) => {
@@ -50,6 +54,7 @@ async function main() {
         }
       }
       item[field] = value
+      // console.log("item[field]:",item[field])
     })
     items.push(item)
   })
