@@ -1,3 +1,4 @@
 node_modules/
 .env
 key_file.txt
+*.ini

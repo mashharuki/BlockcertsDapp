@@ -256,3 +256,4 @@ cd nft-vc && yarn issue:vc
 19. [【Zenn】ブロックチェーンベースの証明書を検証するblockcerts-verifierの紹介](https://zenn.dev/sakazuki_xyz/articles/blockcerts-verifier)
 20. [【Github】nft-vc](https://github.com/pitpa/nft-vc)
 21. [【Zenn】Blockcerts を使って Ethereum ブロックチェーン証明書を発行する方法](https://zenn.dev/tatsuyasusukida/articles/issuing-ethereum-certificates-using-blockcerts)
+22. [Terraform Docs](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)

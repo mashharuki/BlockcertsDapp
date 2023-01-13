@@ -78,6 +78,9 @@ $ node scripts/generate-vc-image.js ./tmp/members.json
 $ node scripts/generate-unsigned-vc.js ./tmp/members.json
 ```
 
+### 注意事項
+なぜかファイルが読み込めなかったり、issuerの値が詰め込めまれなかったりするので注意。
+
 4. VC 発行
 
 ```sh

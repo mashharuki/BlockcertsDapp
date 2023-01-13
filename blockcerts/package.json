@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "convert": "node ./scripts/convert.js ./keys/key_file.txt > ./hosting/jwk.json",
+    "create:bucket": "cd hosting && terraform init && terraform apply",
+    "issue:vc": "cert-issuer -c conf.ini"
   },
   "keywords": [],
-  "author": "",
+  "author": "mashharuki",
   "license": "ISC",
   "devDependencies": {
     "@trust/keyto": "^1.0.1"
